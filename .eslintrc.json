@@ -18,6 +18,7 @@
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
