@@ -1,5 +1,7 @@
+type StatusCode = 200 | 201 | 400 | 401 | 403 | 404 | 500
+
 export interface HttpResponse<T = unknown> {
-  statusCode: number
+  statusCode: StatusCode
   body: T
 }
 
