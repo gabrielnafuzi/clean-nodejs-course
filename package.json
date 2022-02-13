@@ -1,0 +1,7 @@
+{
+  "name": "clean-ts-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Moraes <gabrielhm2001@gmail.com>",
+  "license": "MIT"
+}
