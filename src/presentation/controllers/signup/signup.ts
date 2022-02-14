@@ -1,12 +1,12 @@
-import { AddAccount } from '../../../domain/use-cases'
 import { InvalidParamError, MissingParamError } from '../../errors'
 import { badRequest, serverError } from '../../helpers'
 import {
+  AddAccount,
   Controller,
   EmailValidator,
   HttpRequest,
   HttpResponse,
-} from '../../protocols'
+} from './signup-protocols'
 
 interface HttpRequestBody {
   name?: string
