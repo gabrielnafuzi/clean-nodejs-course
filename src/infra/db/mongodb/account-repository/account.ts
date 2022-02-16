@@ -9,12 +9,7 @@ export class AccountMongoRepository implements AddAccountRepository {
       MongoHelper.getCollection<AddAccountModel>('accounts')
 
     const result = await accountCollection.insertOne(accountData)
-    const account = result.ops[0]
-    const { _id, ...accountWithoutId } = account
 
-    return {
-      ...accountWithoutId,
-      id: _id,
-    }
+    return MongoHelper.mapToModel<AddAccountModel>(result.ops[0])
   }
 }
