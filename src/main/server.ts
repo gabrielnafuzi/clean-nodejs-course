@@ -1,6 +1,4 @@
-import express from 'express'
-
-const app = express()
+import { app } from './config/app'
 
 const PORT = 5050
 
