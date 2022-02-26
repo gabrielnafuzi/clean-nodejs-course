@@ -9,7 +9,7 @@ import {
   HttpResponse,
 } from './signup-protocols'
 
-interface HttpRequestBody {
+interface HttpRequestDto {
   name?: string
   email?: string
   password?: string
@@ -23,7 +23,7 @@ export class SignUpController implements Controller {
   ) {}
 
   async handle(
-    httpRequest: HttpRequest<HttpRequestBody>
+    httpRequest: HttpRequest<HttpRequestDto>
   ): Promise<HttpResponse<AccountModel | Error>> {
     try {
       const requiredFields = [
