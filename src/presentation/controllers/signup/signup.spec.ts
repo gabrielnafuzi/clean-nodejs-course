@@ -1,5 +1,5 @@
 import { InvalidParamError, MissingParamError, ServerError } from '../../errors'
-import { badRequest, ok, serverError } from '../../helpers'
+import { badRequest, created, serverError } from '../../helpers'
 import { SignUpController } from './signup'
 import {
   AccountModel,
@@ -234,6 +234,6 @@ describe('SignUp Controller', () => {
 
     const httpResponse = await sut.handle(makeFakeRequest())
 
-    expect(httpResponse).toEqual(ok(makeFakeAccount(), 201))
+    expect(httpResponse).toEqual(created(makeFakeAccount()))
   })
 })

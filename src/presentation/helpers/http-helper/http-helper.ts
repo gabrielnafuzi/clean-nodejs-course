@@ -1,5 +1,5 @@
 import { ServerError } from '../../errors'
-import { HttpResponse, StatusCode } from './../../protocols'
+import { HttpResponse } from './../../protocols'
 
 export const badRequest = (error: Error): HttpResponse<Error> => {
   return {
@@ -15,12 +15,16 @@ export const serverError = (error: Error): HttpResponse<Error> => {
   }
 }
 
-export const ok = <T = unknown>(
-  data: T,
-  statusCode: StatusCode = 200
-): HttpResponse<T> => {
+export const created = <T = unknown>(data: T): HttpResponse<T> => {
   return {
-    statusCode,
+    statusCode: 201,
+    body: data,
+  }
+}
+
+export const ok = <T = unknown>(data: T): HttpResponse<T> => {
+  return {
+    statusCode: 200,
     body: data,
   }
 }
