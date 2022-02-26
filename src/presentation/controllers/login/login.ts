@@ -1,9 +1,12 @@
 import { InvalidParamError, MissingParamError } from '../../errors'
 import { badRequest, serverError, unauthorized } from '../../helpers'
-import { Controller, HttpResponse } from '../../protocols'
-import { Authentication } from './../../../domain/use-cases/authentication'
-import { EmailValidator } from './../../protocols/email-validator'
-import { HttpRequest } from './../../protocols/http'
+import {
+  Controller,
+  HttpResponse,
+  Authentication,
+  EmailValidator,
+  HttpRequest,
+} from './login-protocols'
 
 interface HttpRequestDto {
   email?: string
