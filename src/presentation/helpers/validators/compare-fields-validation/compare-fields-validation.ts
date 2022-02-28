@@ -1,6 +1,6 @@
+import { Validation } from '../../../../presentation/protocols/validation'
 import { ObjectOf } from '../../../../utils/type-utils'
 import { InvalidParamError } from '../../../errors'
-import { Validation } from '../validation'
 
 export class CompareFieldsValidation implements Validation {
   constructor(

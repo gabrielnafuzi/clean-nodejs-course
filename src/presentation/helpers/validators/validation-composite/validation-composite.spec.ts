@@ -1,6 +1,6 @@
+import { Validation } from '../../../../presentation/protocols/validation'
 import { ObjectOf } from '../../../../utils/type-utils'
 import { MissingParamError } from '../../../errors'
-import { Validation } from '../validation'
 import { ValidationComposite } from './validation-composite'
 
 const makeValidation = (): Validation => {

@@ -1,7 +1,7 @@
+import { Validation } from '../../../../presentation/protocols/validation'
 import { ObjectOf } from '../../../../utils/type-utils'
 import { InvalidParamError } from '../../../errors'
 import { EmailValidator } from '../../../protocols/email-validator'
-import { Validation } from '../validation'
 
 export class EmailValidation implements Validation {
   constructor(
