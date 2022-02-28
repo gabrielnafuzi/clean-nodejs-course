@@ -7,6 +7,7 @@ import {
   EmailValidator,
   HttpRequest,
   HttpResponse,
+  Validation,
 } from './signup-protocols'
 
 interface HttpRequestDto {
@@ -19,13 +20,16 @@ interface HttpRequestDto {
 export class SignUpController implements Controller {
   constructor(
     private readonly emailValidator: EmailValidator,
-    private readonly addAccount: AddAccount
+    private readonly addAccount: AddAccount,
+    private readonly validation: Validation
   ) {}
 
   async handle(
     httpRequest: HttpRequest<HttpRequestDto>
   ): Promise<HttpResponse<AccountModel | Error>> {
     try {
+      this.validation.validate(httpRequest.body)
+
       const requiredFields = [
         'name',
         'email',
