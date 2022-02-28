@@ -6,22 +6,35 @@ import { ValidationComposite } from './validation-composite'
 const makeValidation = (): Validation => {
   class ValidationStub implements Validation {
     validate<T extends ObjectOf<T>>(input: T) {
-      return new MissingParamError('field')
+      return null
     }
   }
 
   return new ValidationStub()
 }
 
-const makeSut = (): ValidationComposite => {
-  const validationStub = makeValidation()
+interface SutTypes {
+  sut: ValidationComposite
+  validationStub: Validation
+}
 
-  return new ValidationComposite([validationStub])
+const makeSut = (): SutTypes => {
+  const validationStub = makeValidation()
+  const sut = new ValidationComposite([validationStub])
+
+  return {
+    sut,
+    validationStub,
+  }
 }
 
 describe('ValidationComposite', () => {
   it('should return an error if any validation fails', () => {
-    const sut = makeSut()
+    const { sut, validationStub } = makeSut()
+
+    jest
+      .spyOn(validationStub, 'validate')
+      .mockReturnValueOnce(new MissingParamError('field'))
 
     const error = sut.validate({ field: 'any_value' })
 
