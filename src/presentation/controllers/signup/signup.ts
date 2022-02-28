@@ -28,7 +28,11 @@ export class SignUpController implements Controller {
     httpRequest: HttpRequest<HttpRequestDto>
   ): Promise<HttpResponse<AccountModel | Error>> {
     try {
-      this.validation.validate(httpRequest.body)
+      const error = this.validation.validate(httpRequest.body)
+
+      if (error) {
+        return badRequest(error)
+      }
 
       const requiredFields = [
         'name',
