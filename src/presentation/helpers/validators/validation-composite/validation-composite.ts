@@ -1,5 +1,5 @@
-import { ObjectOf } from '../../../utils/type-utils'
-import { Validation } from './validation'
+import { ObjectOf } from '../../../../utils/type-utils'
+import { Validation } from '../validation'
 
 export class ValidationComposite implements Validation {
   constructor(private readonly validations: Validation[]) {}
