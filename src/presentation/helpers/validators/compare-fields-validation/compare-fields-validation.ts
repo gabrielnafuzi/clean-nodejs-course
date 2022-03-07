@@ -5,7 +5,7 @@ import { InvalidParamError } from '../../../errors'
 export class CompareFieldsValidation implements Validation {
   constructor(
     private readonly fieldName: string,
-    private readonly fieldToCompareName
+    private readonly fieldToCompareName: string
   ) {}
 
   validate<T extends ObjectOf<T>>(input: T) {
