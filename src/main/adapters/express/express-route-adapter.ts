@@ -4,7 +4,7 @@ import {
   Controller,
   HttpRequest,
   StatusCode,
-} from '../../presentation/protocols'
+} from '../../../presentation/protocols'
 
 const successStatusCodes: StatusCode[] = [200, 201]
 
