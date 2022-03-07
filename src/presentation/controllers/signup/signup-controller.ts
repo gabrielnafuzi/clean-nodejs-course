@@ -6,7 +6,7 @@ import {
   HttpRequest,
   HttpResponse,
   Validation,
-} from './signup-protocols'
+} from './signup-controller-protocols'
 
 interface HttpRequestDto {
   name?: string

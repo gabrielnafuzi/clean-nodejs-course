@@ -1,14 +1,14 @@
 import { ObjectOf } from '../../../utils/type-utils'
 import { MissingParamError, ServerError } from '../../errors'
 import { badRequest, created, serverError } from '../../helpers'
-import { SignUpController } from './signup'
+import { SignUpController } from './signup-controller'
 import {
   AccountModel,
   AddAccount,
   AddAccountModel,
   HttpRequest,
   Validation,
-} from './signup-protocols'
+} from './signup-controller-protocols'
 
 const makeFakeAccount = (): AccountModel => {
   return {

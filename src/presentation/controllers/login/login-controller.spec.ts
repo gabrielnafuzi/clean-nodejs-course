@@ -1,13 +1,13 @@
 import { ObjectOf } from '../../../utils/type-utils'
 import { MissingParamError } from '../../errors'
 import { badRequest, ok, serverError, unauthorized } from '../../helpers'
-import { LoginController } from './login'
+import { LoginController } from './login-controller'
 import {
   Authentication,
   AuthenticationModel,
   HttpRequest,
   Validation,
-} from './login-protocols'
+} from './login-controller-protocols'
 
 const makeFakeRequest = (): HttpRequest => {
   return {

@@ -5,7 +5,7 @@ import {
   HttpRequest,
   HttpResponse,
   Validation,
-} from './login-protocols'
+} from './login-controller-protocols'
 
 interface HttpRequestDto {
   email?: string
