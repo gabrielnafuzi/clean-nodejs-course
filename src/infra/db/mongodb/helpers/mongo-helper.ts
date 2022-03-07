@@ -26,7 +26,11 @@ export const MongoHelper = {
     return this.client.db().collection<T>(name)
   },
 
-  mapToModel<T = unknown>(collection: WithId<T>) {
+  mapToModel<T = unknown>(collection: WithId<T> | null) {
+    if (!collection) {
+      return null
+    }
+
     const { _id, ...collectionWithoutId } = collection
 
     return {
