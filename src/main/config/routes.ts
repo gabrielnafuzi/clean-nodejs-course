@@ -11,7 +11,7 @@ export const setupRoutes = async (app: Express) => {
     const folderPath = path.resolve(__dirname, '..', 'routes', folderName)
 
     readdirSync(folderPath).map(async (fileName) => {
-      if (!fileName.includes('.test.')) {
+      if (!fileName.includes('.test.') && !fileName.endsWith('.map')) {
         ;(await import(path.resolve(folderPath, fileName))).default(router)
       }
     })
