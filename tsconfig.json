@@ -4,7 +4,8 @@
     "module": "commonjs",
     "target": "es2019",
     "esModuleInterop": true,
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "sourceMap": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.d.ts", "**/*.spec.ts", "**/*.test.ts"]
