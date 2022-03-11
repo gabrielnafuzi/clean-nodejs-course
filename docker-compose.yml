@@ -11,10 +11,10 @@ services:
       - "27017:27017"
   api:
     container_name: api-container
-    build: .
-    image: clean-node-api
+    image: node:16-alpine
+    working_dir: /usr/src/clean-node-api
     restart: always
-    command: npm run debug
+    command: sh -c "npm i -g husky && npm install --only=production && npm run debug"
     volumes:
       - ./dist:/usr/src/clean-node-api/dist
       - ./package.json:/usr/src/clean-node-api/package.json
@@ -22,6 +22,4 @@ services:
       - "5050:5050"
       - "9222:9222"
     links:
-      - mongo
-    depends_on:
       - mongo
